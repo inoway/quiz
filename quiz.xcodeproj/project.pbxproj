@@ -23,6 +23,9 @@
 		8A0FB7C01859866100BFE3EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0FB79B1859866000BFE3EA /* Foundation.framework */; };
 		8A0FB7C81859866100BFE3EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A0FB7C61859866100BFE3EA /* InfoPlist.strings */; };
 		8A0FB7CB1859866100BFE3EA /* quizTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0FB7CA1859866100BFE3EA /* quizTests.m */; };
+		8A4D569D1862A7C400CC877B /* pa.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A4D569C1862A7C400CC877B /* pa.png */; };
+		8A4D56A01862ABD800CC877B /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4D569F1862ABD800CC877B /* QuizViewController.m */; };
+		8A4D56A31862AFB600CC877B /* Problem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4D56A21862AFB600CC877B /* Problem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,11 @@
 		8A0FB7C71859866100BFE3EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8A0FB7C91859866100BFE3EA /* quizTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = quizTests.h; sourceTree = "<group>"; };
 		8A0FB7CA1859866100BFE3EA /* quizTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = quizTests.m; sourceTree = "<group>"; };
+		8A4D569C1862A7C400CC877B /* pa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pa.png; path = ../../../Desktop/jyanken/pa.png; sourceTree = "<group>"; };
+		8A4D569E1862ABD800CC877B /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizViewController.h; path = ../QuizViewController.h; sourceTree = "<group>"; };
+		8A4D569F1862ABD800CC877B /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuizViewController.m; path = ../QuizViewController.m; sourceTree = "<group>"; };
+		8A4D56A11862AFB600CC877B /* Problem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Problem.h; sourceTree = "<group>"; };
+		8A4D56A21862AFB600CC877B /* Problem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Problem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,11 +125,15 @@
 		8A0FB79F1859866000BFE3EA /* quiz */ = {
 			isa = PBXGroup;
 			children = (
+				8A4D569E1862ABD800CC877B /* QuizViewController.h */,
+				8A4D569F1862ABD800CC877B /* QuizViewController.m */,
 				8A0FB7A81859866000BFE3EA /* AppDelegate.h */,
 				8A0FB7A91859866000BFE3EA /* AppDelegate.m */,
 				8A0FB7B11859866000BFE3EA /* MainStoryboard.storyboard */,
 				8A0FB7B41859866000BFE3EA /* ViewController.h */,
 				8A0FB7B51859866100BFE3EA /* ViewController.m */,
+				8A4D56A11862AFB600CC877B /* Problem.h */,
+				8A4D56A21862AFB600CC877B /* Problem.m */,
 				8A0FB7A01859866000BFE3EA /* Supporting Files */,
 			);
 			path = quiz;
@@ -130,6 +142,7 @@
 		8A0FB7A01859866000BFE3EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8A4D569C1862A7C400CC877B /* pa.png */,
 				8A0FB7A11859866000BFE3EA /* quiz-Info.plist */,
 				8A0FB7A21859866000BFE3EA /* InfoPlist.strings */,
 				8A0FB7A51859866000BFE3EA /* main.m */,
@@ -236,6 +249,7 @@
 				8A0FB7AE1859866000BFE3EA /* Default@2x.png in Resources */,
 				8A0FB7B01859866000BFE3EA /* Default-568h@2x.png in Resources */,
 				8A0FB7B31859866000BFE3EA /* MainStoryboard.storyboard in Resources */,
+				8A4D569D1862A7C400CC877B /* pa.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +287,8 @@
 				8A0FB7A61859866000BFE3EA /* main.m in Sources */,
 				8A0FB7AA1859866000BFE3EA /* AppDelegate.m in Sources */,
 				8A0FB7B61859866100BFE3EA /* ViewController.m in Sources */,
+				8A4D56A01862ABD800CC877B /* QuizViewController.m in Sources */,
+				8A4D56A31862AFB600CC877B /* Problem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +469,7 @@
 				8A0FB7D01859866100BFE3EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A0FB7D11859866100BFE3EA /* Build configuration list for PBXNativeTarget "quizTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +478,7 @@
 				8A0FB7D31859866100BFE3EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
