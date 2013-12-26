@@ -31,7 +31,7 @@
 }
 
 //問題文を読み出し
--(NSStiring *)getQ {
+-(NSString *)getQ {
     return question;
 }
 

@@ -10,4 +10,9 @@
 
 @interface Problem : UIViewController
 
++ (id)initProblem;
+- (void)setQ:(NSString *)q withA:(int)a;
+- (NSString *)getQ;
+- (int)getA;
+
 @end
