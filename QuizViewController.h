@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Problem.h"
 
 @interface QuizViewController : UIViewController
 

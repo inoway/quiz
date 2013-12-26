@@ -26,6 +26,7 @@
 		8A4D569D1862A7C400CC877B /* pa.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A4D569C1862A7C400CC877B /* pa.png */; };
 		8A4D56A01862ABD800CC877B /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4D569F1862ABD800CC877B /* QuizViewController.m */; };
 		8A4D56A31862AFB600CC877B /* Problem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4D56A21862AFB600CC877B /* Problem.m */; };
+		8A75C56F186BF8BD00CB2A61 /* quiz.csv.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8A75C56E186BF8BD00CB2A61 /* quiz.csv.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		8A4D569F1862ABD800CC877B /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuizViewController.m; path = ../QuizViewController.m; sourceTree = "<group>"; };
 		8A4D56A11862AFB600CC877B /* Problem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Problem.h; sourceTree = "<group>"; };
 		8A4D56A21862AFB600CC877B /* Problem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Problem.m; sourceTree = "<group>"; };
+		8A75C56E186BF8BD00CB2A61 /* quiz.csv.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = quiz.csv.txt; path = ../../../Downloads/quiz.csv.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		8A0FB7A01859866000BFE3EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8A75C56E186BF8BD00CB2A61 /* quiz.csv.txt */,
 				8A4D569C1862A7C400CC877B /* pa.png */,
 				8A0FB7A11859866000BFE3EA /* quiz-Info.plist */,
 				8A0FB7A21859866000BFE3EA /* InfoPlist.strings */,
@@ -250,6 +253,7 @@
 				8A0FB7B01859866000BFE3EA /* Default-568h@2x.png in Resources */,
 				8A0FB7B31859866000BFE3EA /* MainStoryboard.storyboard in Resources */,
 				8A4D569D1862A7C400CC877B /* pa.png in Resources */,
+				8A75C56F186BF8BD00CB2A61 /* quiz.csv.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
