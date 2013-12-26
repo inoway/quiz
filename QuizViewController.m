@@ -44,6 +44,23 @@ IBOutlet UITextView *problemText;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+        
+        //クイズ問題を読み込み
+        [self loadProblemSet];
+        
+        //クイズ問題をランダムに並び替え
+        [self shuffleProblemSet];
+        
+        //提示問題を10問とする
+        totalProblems=10;
+        
+        //現在の問題番号と正答数を0にする
+        currentProblem=0;
+        correctAnswers=0;
+        
+        //problemSetの最初の要素の問題文をクイズにセット
+        problemText.text = [[problemSet objectAtIndex:currentProblem] getQ];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -105,7 +122,7 @@ IBOutlet UITextView *problemText;
     }
 }
 
-- (void)
+
 
 
 
