@@ -14,20 +14,14 @@
 
 @implementation QuizViewController {
 
-//問題(problemクラスのインスタンス)を格納する配列
-NSMutableArray *problemSet;
 
-//出題する問題数
-int totalProblems;
+NSMutableArray *problemSet;//問題(problemクラスのインスタンス)を格納する配列,NSMutableArrayは可変配列を提供するクラス
 
-//現在の出題済み問題数を記録
-int currentProblem;
 
-//正答数
-int correntProblem;
-
-//問題文を表示するテキストウインドウ
-IBOutlet UITextView *problemText;
+int totalProblems;//出題数
+int currentProblem;//現在の出題済み問題数
+int correctAnswers;//正解数
+//IBOutlet UITextView *problemText;//問題文を表示するテキストウインドウ
 }
 
 
@@ -35,32 +29,23 @@ IBOutlet UITextView *problemText;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
-    }
+}
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [self loadProblemSet];//クイズ問題を読み込み
+    [self shuffleProblemSet];//クイズ問題をランダムに並び替え
+    totalProblems=10;//出題数を10問とする
         
-        //クイズ問題を読み込み
-        [self loadProblemSet];
-        
-        //クイズ問題をランダムに並び替え
-        [self shuffleProblemSet];
-        
-        //提示問題を10問とする
-        totalProblems=10;
-        
-        //現在の問題番号と正答数を0にする
-        currentProblem=0;
-        correctAnswers=0;
+        //現在の問題番号と正解の数を0にする
+    currentProblem=0;
+    correctAnswers=0;
         
         //problemSetの最初の要素の問題文をクイズにセット
-        problemText.text = [[problemSet objectAtIndex:currentProblem] getQ];
-    
+    problemText.text = [[problemSet objectAtIndex:currentProblem] getQ];
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,8 +62,7 @@ IBOutlet UITextView *problemText;
     int enc = NSUTF8StringEncoding;
     NSString* text = [NSString stringWithContentsOfFile:path encoding:enc error:&error];
     
-    //行ごとに分割し、配列「line」に格納
-    NSArray* lines = [text componentsSeparatedByString:@"\n"];
+    NSArray* lines = [text componentsSeparatedByString:@"\n"];//行ごとに分割し、配列「line」に格納
     
     //問題を格納する可変配列のproblemSetを初期化
     problemSet=[[NSMutableArray alloc]init];
@@ -103,27 +87,40 @@ IBOutlet UITextView *problemText;
 //問題文をシャッフル
 - (void)shuffleProblemSet {
     
-    //problemSetに格納された全問題の数を取得
-    int totalQuestions=[problemSet count];
-    
-    //Fisher-Yatesアルゴリズム用のカウンターを取得
-    int i=totalQuestions;
+    int totalQuestions=[problemSet count];//problemSetに格納された全問題の数を取得
+    int i=totalQuestions;//Fisher-Yatesアルゴリズム用のカウンターを取得
     
     //Fisher-Yatesアルゴリズムによって配列の要素をシャッフル
     while (i>0) {
-        //乱数を発生
-        srand((unsigned int)time(0));
+        srand((unsigned int)time(0));//乱数を発生
         int j=rand()%i;
-        
-        //要素を並び替え
-        [problemSet exchangeObjectAtIndex:(i-1) withObjectAtIndex:j];
-        //カウンターを減少させる
-        i=i-1;
+        [problemSet exchangeObjectAtIndex:(i-1) withObjectAtIndex:j];//要素を並び替え
+        i=i-1;//カウンターを減少させる
     }
 }
 
+//次の問題を提示
+-(void)nextProblem {
+    currentProblem++;//currentProblemを1進める
+    if (currentProblem < totalProblems) {//これまでに出題した問題が、提示問題数に達していないとき
+        problemText.text=[[problemSet objectAtIndex:currentProblem]getQ];//次の問題の問題文を表示
+    }
+}
+
+//ボタンの判定
+-(IBAction)answerlsTrue:(id)sender {//「◯」ボタンが押されたとき
+    if ([[problemSet objectAtIndex:currentProblem]getA]==0) {//答えを確認し、次の問題を提示
+        correctAnswers++;
+    }
+    [self nextProblem];
+}
 
 
-
+-(IBAction)answerFalse:(id)sender {//「×」ボタンが押されたとき
+    if ([[problemSet objectAtIndex:currentProblem]getA]==1) {//答えを確認し、次の問題を提示
+        correctAnswers++;
+    }
+    [self nextProblem];
+}
 
 @end

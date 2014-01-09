@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Problem.h"
 
-@interface QuizViewController : UIViewController
+@interface QuizViewController : UIViewController{
+    
+    __weak IBOutlet UILabel *problemText;
+}
+-(IBAction)answerlsTrue:(id)sender;
+-(IBAction)answerFalse:(id)sender;
 
 @end
