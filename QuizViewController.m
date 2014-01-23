@@ -36,7 +36,7 @@ int correctAnswers;//正解数
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self loadProblemSet];//クイズ問題を読み込み
+    [self loadProblemSet];//クイズ問題を読み込む
     [self shuffleProblemSet];//クイズ問題をランダムに並び替え
     totalProblems=10;//出題数を10問とする
         
