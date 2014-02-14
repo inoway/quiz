@@ -54,7 +54,7 @@ int correctAnswers;//正解数
     // Dispose of any resources that can be recreated.
 }
 
--(void)loadProblemSet{
+-(void)loadProblemSet {
     //ファイルの読み込み
     NSString* path = [[NSBundle mainBundle] pathForResource:@"quiz" ofType:@"txt"];
     
